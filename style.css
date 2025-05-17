@@ -1,0 +1,169 @@
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 500px;
+    margin: auto;
+    padding: 0 15px;
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  input, select, button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #135ba1;
+  }
+  
+  #timer {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d32f2f;
+    text-align: right;
+    margin-bottom: 10px;
+  }
+  
+  #progress-container {
+    background-color: #ddd;
+    height: 8px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  
+  #progress-bar {
+    height: 8px;
+    width: 0%;
+    background-color: #1976d2;
+    transition: width 0.3s;
+  }
+  
+  #answers-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #answers-list li {
+    padding: 14px 12px;
+    border: 1px solid #ccc;
+    margin: 8px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  #answers-list li:hover {
+    background-color: #e3f2fd;
+  }
+  
+  .review-question {
+    background: #f9f9f9;
+    border-left: 4px solid #1976d2;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  .answer-review {
+    padding: 10px 12px;
+    border-radius: 4px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    font-size: 15px;
+  }
+  
+  .correct {
+    background-color: #c8e6c9;
+    border-color: #2e7d32;
+  }
+  
+  .wrong {
+    background-color: #ffcdd2;
+    border-color: #c62828;
+  }
+  
+  .button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .button-row button {
+    flex: 1 1 45%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  #leaderboard label,
+  #leaderboard select {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  #leaderboard-list {
+    padding-left: 20px;
+    font-size: 16px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 600px) {
+    body {
+      padding: 10px;
+    }
+  
+    .container {
+      padding: 0 10px;
+    }
+  
+    h1, h2, h3, h4 {
+      font-size: 1.1rem;
+    }
+  
+    input, select, button {
+      font-size: 15px;
+    }
+  
+    .answer-review,
+    #answers-list li {
+      font-size: 15px;
+      padding: 10px;
+    }
+  
+    .button-row button {
+      flex: 1 1 100%;
+    }
+  }
+  
