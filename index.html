@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form id="start-form" class="card">
+        <h1>Tech Quiz</h1>
+        <input
+          type="text"
+          id="username"
+          placeholder="Enter your name"
+          required
+        />
+        <select id="category">
+          <option value="javascript">JavaScript</option>
+          <option value="backend">Backend</option>
+          <option value="databases">Databases</option>
+          <option value="ai">AI</option>
+        </select>
+        <button type="submit">Start Quiz</button>
+      </form>
+
+      <div id="quiz-container" class="card" style="display: none">
+        <div id="progress-container"><div id="progress-bar"></div></div>
+        <div id="timer">10</div>
+        <h2 id="question-text"></h2>
+        <ul id="answers-list"></ul>
+      </div>
+
+      <div id="result" class="card" style="display: none"></div>
+
+      <div id="leaderboard" class="card">
+        <h2>Leaderboard</h2>
+        <label for="leaderboard-filter">Filter by Category:</label>
+        <select id="leaderboard-filter">
+          <option value="all">All</option>
+          <option value="javascript">JavaScript</option>
+          <option value="backend">Backend</option>
+          <option value="databases">Databases</option>
+          <option value="ai">AI</option>
+        </select>
+        <ol id="leaderboard-list"></ol>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
