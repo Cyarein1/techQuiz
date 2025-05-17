@@ -1,0 +1,874 @@
+{
+    "javascript": [
+        {
+            "question": "Which of the following best describes JavaScript?",
+            "options": [
+                "A server-side programming language.", 
+                "A programming language used for web development.", 
+                "A markup language used to design websites.", 
+                "A database management system."
+            ],
+            "correct": "A programming language used for web development"
+        },
+        {
+            "question": "What is the common naming convention for variables in JavaScript?",
+            "options": [
+                "Snake case", 
+                "Pascal case", 
+                "Camel case", 
+                "Kebab case"
+            ],
+            "correct": "Camel case"
+        },
+        {
+            "question": "Which of the following does NOT describe an object in JavaScript?",
+            "options": [
+                "A primitive data type.", 
+                "A non-primitive data type.", 
+                "A collection of key-value pairs.",
+                "A container for properties and methods."
+            ],
+            "correct": "A primitive data type."
+        },
+        {
+            "question": "What is an arrow function?",
+            "options": [
+                "A function with no return value.", 
+                "A shorthand syntax for defining functions.",
+                "A type of array.", 
+                "A loop."
+            ],
+            "correct": "A shorthand syntax for defining functions."
+        },
+        {
+            "question": "What is destructuring in JavaScript?",
+            "options": [
+                "Removing elements from an array.", 
+                "Deleting properties from an object.",
+                "Extracting values from arrays or objects into variables.", 
+                "Splitting a string into characters."
+            ],
+            "correct": "Extracting values from arrays or objects into variables."
+        },
+        {
+            "question": "What is hoisting in JavaScript?",
+            "options": [
+                "Pushing elements to the top of an array.", 
+                "Using variables without declaring them.", 
+                "A loop structure.", 
+                "JavaScript's default behavior of moving declarations to the top."
+            ],
+            "correct": "JavaScript's default behavior of moving declarations to the top."
+        },
+        {
+            "question": "What is a higher-order function?",
+            "options": [
+                "A function that is written using ES6 syntax.", 
+                "A function that takes another function as an argument or returns a function.", 
+                "A function that returns a number greater than another.", 
+                "A function that is executed at a higher scope level."
+            ],
+            "correct": "A function that takes another function as an argument or returns a function."
+        },
+        {
+            "question": "What does a callback function mean in JavaScript?",
+            "options": [
+                "A function that returns another function.",         
+                "A function that is passed into another function as an argument.",
+                "A function that calls itself.", 
+                "A built-in JavaScript method."
+            ],
+            "correct": "A function that is passed into another function as an argument."
+        },
+        {
+            "question": " Which method adds an element to the end of an array?",
+            "options": [
+                "push()", 
+                "pop()", 
+                "shift()", 
+                "unshift()"
+            ],
+            "correct": "push()"
+        },
+        {
+            "question": "What is the difference between null and undefined?",
+            "options": [
+                "No difference.", 
+                "null means a variable was declared but not assigned; undefined means empty.",
+                "undefined means a variable was declared but not assigned; null is intentional absence of value.",
+                "Both mean zero."
+            ],
+            "correct": "undefined means a variable was declared but not assigned; null is intentional absence of value"
+        },
+        {
+            "question": "What is the difference between let and const?",
+            "options": [
+                "let can be reassigned; const cannot.",
+                "const is block-scoped; let is not.",
+                "let is used for constants.",
+                "No difference."
+            ],
+            "correct": "let can be reassigned; const cannot."
+        },
+        {
+            "question": "Which keyword is used to declare a block-scoped variable?",
+            "options": [
+                "var",
+                "let",
+                "const",
+                "Both let and const"
+            ],
+            "correct": "Both let and const"
+        },
+        {
+            "question": "Which method adds one or more elements to the beginning of an array?",
+            "options": [
+                "push()",
+                "pop()",
+                "shift()",
+                "unshift()"
+            ],
+            "correct": "unshift()"
+        },
+        {
+            "question": "What is the purpose of the 'continue' statement in a loop?",
+            "options": [
+                "Exit the loop completely",
+                "Restart the loop from the beginning",
+                "Skip the current iteration and continue with the next one",
+                "End the program"
+            ],
+            "correct": "Skip the current iteration and continue with the next one"
+        },
+        {
+            "question": "What does the Array.prototype.map() method do?",
+            "options": [
+                "Removes items from an array",
+                "Returns a new array with the results of calling a function on every element",
+                "Filters the array based on a condition",
+                "Sorts the array in alphabetical order"
+            ],
+            "correct": "Returns a new array with the results of calling a function on every element"
+        },
+        {
+            "question": "What is a template literal in JavaScript?",
+            "options": [
+                "A function that formats text",
+                "A method to define string templates in HTML",
+                "A string that uses backticks and allows embedded expressions",
+                "A comment block that spans multiple lines"
+            ],
+            "correct": "A string that uses backticks and allows embedded expressions"
+        },
+        {
+            "question": "What will the following expression return?\n\nBoolean('false')",
+            "options": [
+                "false",
+                "true",
+                "undefined",
+                "Error"
+            ],
+            "correct": "true"
+        },
+        {
+            "question": "What is the scope of a variable declared with `var` inside a function?",
+            "options": [
+                "Global scope",
+                "Block scope",
+                "Function scope",
+                "Module scope"
+            ],
+            "correct": "Function scope"
+        },
+        {
+            "question": "Which keyword is used to handle exceptions in JavaScript?",
+            "options": [
+                "try",
+                "error",
+                "throw",
+                "except"
+            ],
+            "correct": "try"
+        },
+        {
+            "question": "What does JSON.stringify() do?",
+            "options": [
+                "Parses a JSON string into an object",
+                "Converts a JavaScript object into a JSON string",
+                "Encrypts a string",
+                "Deletes keys from a JSON object"
+            ],
+            "correct": "Converts a JavaScript object into a JSON string"
+        },
+        {
+            "question": "Which method can be used to convert a string to an integer?",
+            "options": [
+                "parseInt()",
+                "parseFloat()",
+                "Number.toString()",
+                "Math.floor()"
+            ],
+            "correct": "parseInt()"
+        },
+        {
+            "question": "Which symbol is used to create a single-line comment in JavaScript?",
+            "options": [
+                "#",
+                "/*",
+                "//",
+                "<!--"
+            ],
+            "correct": "//"
+        },
+        {
+            "question": "Which built-in object in JavaScript allows you to work with dates and times?",
+            "options": [
+                "Time",
+                "Clock",
+                "Calendar",
+                "Date"
+            ],
+            "correct": "Date"
+        },
+        {
+            "question": "Which of the following will throw an error?",
+            "options": [
+                "const x = 5; x = 10;",
+                "let x = 5; x = 10;",
+                "var x = 5; x = 10;",
+                "let x = 5; const y = 10;"
+            ],
+            "correct": "const x = 5; x = 10;"
+        },
+        {
+            "question": "What is the output of this code?\n\nconsole.log(typeof NaN);",
+            "options": [
+                "number",
+                "NaN",
+                "undefined",
+                "string"
+            ],
+            "correct": "number"
+        }
+    ],
+
+    "backend": [
+        {
+            "question": "What is the main role of a backend in a web application?",
+            "options": [
+                "Styling the user interface",
+                "Handling user interactions in the browser",
+                "Managing data, authentication, and business logic",
+                "Creating animations"
+            ],
+            "correct": "Managing data, authentication, and business logic"
+        },
+        {
+            "question": "What is an API?",
+            "options": [
+                "A type of database",
+                "A server",
+                "A set of rules for how software applications communicate",
+                "A frontend framework"
+            ],
+            "correct": "A set of rules for how software applications communicate"
+        },
+        {
+            "question": "Which database type stores data in rows and columns?",
+            "options": [
+                "Document database",
+                "Key-value store",
+                "Graph database",
+                "Relational database"
+            ],
+            "correct": "Relational database"
+        },
+        {
+            "question": "Which protocol is primarily used to transfer web pages over the internet?",
+            "options": [
+                "FTP",
+                "SMTP",
+                "HTTP",
+                "SSH"
+            ],
+            "correct": "HTTP"
+        },
+        {
+            "question": "Which type of API follows a stateless architecture and uses HTTP?",
+            "options": [
+                "REST",
+                "SOAP",
+                "GraphQL",
+                "WebSocket"
+            ],
+            "correct": "REST"
+        },
+        {
+            "question": "What is authentication?",
+            "options": [
+                "Encoding a message for privacy",
+                "Verifying the identity of a user or system",
+                "Storing data in a database",
+                "Accessing another server"
+            ],
+            "correct": "Verifying the identity of a user or system"
+        },
+        {
+            "question": "What does CRUD stand for in backend development?",
+            "options": [
+                "Create, Read, Update, Delete",
+                "Connect, Register, Upload, Download",
+                "Code, Run, Update, Deploy",
+                "Create, Render, Use, Drop"
+            ],
+            "correct": "Create, Read, Update, Delete"
+        },
+        {
+            "question": "What is the purpose of a database index?",
+            "options": [
+                "To store backup data",
+                "To encrypt data",
+                "To improve data retrieval speed",
+                "To assign unique IDs to users"
+            ],
+            "correct": "To improve data retrieval speed"
+        },
+        {
+            "question": "Which of the following is a common format for API data exchange?",
+            "options": [
+                "CSV",
+                "HTML",
+                "JSON",
+                "XMLHttpRequest"
+            ],
+            "correct": "JSON"
+        },
+        {
+            "question": "What is load balancing in backend systems?",
+            "options": [
+                "Equalizing CPU and memory usage on a server",
+                "Distributing incoming traffic across multiple servers",
+                "Balancing the design between frontend and backend",
+                "Keeping the app interface symmetrical"
+            ],
+            "correct": "Distributing incoming traffic across multiple servers"
+        },
+        {
+            "question": "Which of the following is a benefit of using environment variables?",
+            "options": [
+                "Hardcoding passwords into source code",
+                "Sharing configuration with the frontend",
+                "Securing configuration outside of source code",
+                "Compiling code faster"
+            ],
+            "correct": "Securing configuration outside of source code"
+        },
+        {
+            "question": "What is the role of middleware in a backend application?",
+            "options": [
+                "Serving static files",
+                "Handling errors only",
+                "Adding processing steps between requests and responses",
+                "Rendering the frontend"
+            ],
+            "correct": "Adding processing steps between requests and responses"
+        },
+        {
+            "question": "Which HTTP method is typically used to retrieve data from a server?",
+            "options": [
+                "POST",
+                "GET",
+                "PUT",
+                "DELETE"
+            ],
+            "correct": "GET"
+        },
+        {
+            "question": "What is a session in backend development?",
+            "options": [
+                "A backend server restart",
+                "A continuous stream of logs",
+                "A way to store user data between requests",
+                "A data backup routine"
+            ],
+            "correct": "A way to store user data between requests"
+        },
+        {
+            "question": "Which type of database is ideal for storing hierarchical relationships?",
+            "options": [
+                "Graph database",
+                "Relational database",
+                "Document database",
+                "Key-value store"
+            ],
+            "correct": "Graph database"
+        },
+        {
+            "question": "What does latency refer to in backend systems?",
+            "options": [
+                "CPU usage",
+                "Data loss",
+                "Delay between request and response",
+                "Server temperature"
+            ],
+            "correct": "Delay between request and response"
+        },
+        {
+            "question": "Which concept ensures only authorized users can perform certain actions?",
+            "options": [
+                "Authentication",
+                "Verification",
+                "Authorization",
+                "Logging"
+            ],
+            "correct": "Authorization"
+        },
+        {
+            "question": "What is the purpose of caching in backend applications?",
+            "options": [
+                "Encrypting responses",
+                "Slowing down repeated requests",
+                "Temporarily storing data to improve performance",
+                "Securing user input"
+            ],
+            "correct": "Temporarily storing data to improve performance"
+        },
+        {
+            "question": "Which strategy helps in horizontal scalability of backend applications?",
+            "options": [
+                "Adding more memory to one server",
+                "Using serverless functions",
+                "Adding more servers to handle requests",
+                "Making the UI simpler"
+            ],
+            "correct": "Adding more servers to handle requests"
+        },
+        {
+            "question": "What does a 500 Internal Server Error generally indicate?",
+            "options": [
+                "The server is not reachable",
+                "The client made a bad request",
+                "There is an error on the server side",
+                "The resource was not found"
+            ],
+            "correct": "There is an error on the server side"
+        }
+    ],
+
+
+    "databases": [
+        {
+            "question": "What is a primary key in a relational database?",
+            "options": [
+                "A field that uniquely identifies each record",
+                "A field that stores passwords",
+                "A field that links to another table",
+                "A field that contains duplicated values"
+                ],
+            "correct": "A field that uniquely identifies each record"
+        },
+        {
+            "question": "What does SQL stand for?",
+            "options": [
+                "Structured Query List",
+                "Simple Query Language",
+                "Structured Query Language",
+                "Server Query Logic"
+                ],
+            "correct": "Structured Query Language"
+        },
+        {
+            "question": "Which SQL command is used to add new records to a table?",
+            "options": [
+                "ADD",
+                "INSERT INTO",
+                "APPEND",
+                "CREATE"
+                ],
+            "correct": "INSERT INTO"
+        },
+        {
+            "question": "Which SQL clause is used to filter results?",
+            "options": [
+                "ORDER BY",
+                "WHERE",
+                "SELECT",
+                "GROUP BY"
+            ],
+            "correct": "WHERE"
+        },
+        {
+            "question": "What does the FOREIGN KEY constraint do?",
+            "options": [
+                "Enforces uniqueness of values",
+                "Links two tables together",
+                "Sets a default value",
+                "Indexes the table"
+            ],
+            "correct": "Links two tables together"
+        },
+        {
+            "question": "Which command is used to remove a table from the database?",
+            "options": [
+                "DELETE",
+                "DROP",
+                "REMOVE",
+                "CLEAR"
+            ],
+            "correct": "DROP"
+        },
+        {
+            "question": "What is normalization in relational databases?",
+            "options": [
+                "A method to back up data",
+                "The process of formatting SQL queries",
+                "Organizing data to reduce redundancy",
+                "Encrypting database fields"
+                ],
+            "correct": "Organizing data to reduce redundancy"
+        },
+        {
+            "question": "Which SQL keyword is used to sort results?",
+            "options": [
+                "SORT",
+                "GROUP BY",
+                "ORDER BY",
+                "FILTER"
+                ],
+            "correct": "ORDER BY"
+        },
+        {
+            "question": "What is a JOIN in SQL?",
+            "options": [
+                "A type of query that combines rows from multiple tables",
+                "A way to back up databases",
+                "A technique to encrypt records",
+                "A function to merge columns"
+                ],
+            "correct": "A type of query that combines rows from multiple tables"
+        },
+        {
+            "question": "Which SQL function returns the number of records in a table?",
+            "options": [
+                "TOTAL()",
+                "COUNT()",
+                "SUM()",
+                "NUMBER()"
+                ],
+            "correct": "COUNT()"
+        },
+        {
+            "question": "Which SQL statement is used to remove specific rows from a table?",
+            "options": [
+                "REMOVE FROM",
+                "DELETE FROM",
+                "DROP ROW",
+                "TRUNCATE"
+                ],
+            "correct": "DELETE FROM"
+        },
+        {
+            "question": "Which of the following best describes a relational database?",
+            "options": [
+                "A collection of spreadsheets",
+                "A document-based system",
+                "A collection of tables with predefined relationships",
+                "A key-value data store"
+                ],
+            "correct": "A collection of tables with predefined relationships"
+        },
+        {
+            "question": "What does the SELECT * FROM table_name command do?",
+            "options": [
+                "Deletes all data from the table",
+                "Updates all rows in the table",
+                "Selects all columns and rows from the table",
+                "Selects only unique records"
+                ],
+            "correct": "Selects all columns and rows from the table"
+        },
+        {
+            "question": "What is the purpose of the UNIQUE constraint?",
+            "options": [
+                "To automatically index a table",
+                "To ensure all values in a column are different",
+                "To create foreign key relationships",
+                "To allow null values"
+                ],
+            "correct": "To ensure all values in a column are different"
+        },
+        {
+            "question": "What does a NULL value represent in a relational database?",
+            "options": [
+                "A zero value",
+                "An error",
+                "No value or unknown value",
+                "A negative number"
+                ],
+            "correct": "No value or unknown value"
+        },
+        {
+            "question": "Which type of JOIN returns all records when there is a match in either table?",
+            "options": [
+                "INNER JOIN",
+                "LEFT JOIN",
+                "RIGHT JOIN",
+                "FULL OUTER JOIN"
+                ],
+            "correct": "FULL OUTER JOIN"
+        },
+        {
+            "question": "What is a composite key?",
+            "options": [
+                "A foreign key with a default value",
+                "A primary key made from two or more columns",
+                "A column that holds numeric data",
+                "A key used for sorting data"
+                ],
+            "correct": "A primary key made from two or more columns"
+        },
+        {
+            "question": "Which SQL keyword is used to combine the results of two queries and remove duplicates?",
+            "options": [
+                "MERGE",
+                "UNION",
+                "JOIN",
+                "COLLECT"
+                ],
+            "correct": "UNION"
+        },
+        {
+            "question": "What does the GROUP BY clause do?",
+            "options": [
+                "Filters individual rows",
+                "Deletes duplicate rows",
+                "Groups rows that have the same values into summary rows",
+                "Sorts the results in alphabetical order"
+                ],
+            "correct": "Groups rows that have the same values into summary rows"
+        },
+        {
+            "question": "What is a schema in a relational database?",
+            "options": [
+                "A type of database backup",
+                "A visualization of table contents",
+                "The structure that defines tables, fields, and relationships",
+                "A list of SQL commands"
+                ],
+            "correct": "The structure that defines tables, fields, and relationships"
+        }
+    ],
+
+    "ai":[
+        {
+            "question": "What is Artificial Intelligence (AI)?",
+            "options": [
+                "A branch of biology",
+                "A programming language",
+                "A field of study focused on creating machines that mimic human intelligence",
+                "A type of computer hardware"
+                ],
+            "correct": "A field of study focused on creating machines that mimic human intelligence"
+        },
+        {
+            "question": "Which of the following is a common application of AI?",
+            "options": [
+                "Word processing",
+                "Web browsing",
+                "Speech recognition",
+                "Spreadsheet calculation"
+                ],
+            "correct": "Speech recognition"
+        },
+        {
+            "question": "What does 'machine learning' mean in the context of AI?",
+            "options": [
+                "Machines that are manually programmed",
+                "Machines that learn from data without being explicitly programmed",
+                "Machines that can only follow human instructions",
+                "Machines that operate without data"
+                ],
+            "correct": "Machines that learn from data without being explicitly programmed"
+        },
+        {
+            "question": "Which algorithm is commonly used for classification tasks in AI?",
+            "options": [
+                "Dijkstra's algorithm",
+                "Merge sort",
+                "Decision trees",
+                "Quicksort"
+                ],
+            "correct": "Decision trees"
+        },
+        {
+            "question": "What is a neural network?",
+            "options": [
+                "A biological term",
+                "A type of database",
+                "A series of algorithms that mimic the human brain",
+                "A computer virus"
+                ],
+            "correct": "A series of algorithms that mimic the human brain"
+        },
+        {
+            "question": "Which term describes the ability of a machine to perform tasks typically requiring human intelligence?",
+            "options": [
+                "Automation",
+                "Artificial Intelligence",
+                "Robotics",
+                "Virtual Reality"
+                ],
+            "correct": "Artificial Intelligence"
+        },
+        {
+            "question": "Which of the following is an example of natural language processing (NLP)?",
+            "options": [
+                "Image enhancement",
+                "Speech-to-text transcription",
+                "Pathfinding in games",
+                "Sorting algorithms"
+                ],
+            "correct": "Speech-to-text transcription"
+        },
+        {
+            "question": "What is supervised learning?",
+            "options": [
+                "Learning without using any data",
+                "Learning from unlabelled data",
+                "Learning from data with known outputs",
+                "Learning by trial and error only"
+                ],
+            "correct": "Learning from data with known outputs"
+        },
+        {
+            "question": "Which of these is NOT a type of machine learning?",
+            "options": [
+                "Supervised learning",
+                "Unsupervised learning",
+                "Reinforcement learning",
+                "Command-line learning"
+                ],
+            "correct": "Command-line learning"
+        },
+        {
+            "question": "What is the main goal of reinforcement learning?",
+            "options": [
+                "To classify data into groups",
+                "To cluster data based on similarity",
+                "To learn actions that maximize a reward",
+                "To convert data into images"
+                ],
+            "correct": "To learn actions that maximize a reward"
+        },
+        {
+            "question": "Which term refers to the dataset used to evaluate the performance of a machine learning model?",
+            "options": [
+                "Training set",
+                "Validation set",
+                "Testing set",
+                "Production set"
+                ],
+            "correct": "Testing set"
+        },
+        {
+            "question": "What is overfitting in machine learning?",
+            "options": [
+                "When the model is too simple",
+                "When the model performs well on new data",
+                "When the model memorizes the training data and performs poorly on new data",
+                "When the model is trained with too little data"
+                ],
+            "correct": "When the model memorizes the training data and performs poorly on new data"
+        },
+        {
+            "question": "Which of the following is a deep learning framework?",
+            "options": [
+                "NumPy",
+                "TensorFlow",
+                "jQuery",
+                "Django"
+                ],
+            "correct": "TensorFlow"
+        },
+        {
+            "question": "What does the Turing Test evaluate?",
+            "options": [
+                "Memory performance of machines",
+                "Speed of algorithms",
+                "Whether a machine can exhibit intelligent behavior indistinguishable from a human",
+                "Accuracy of computations"
+                ],
+            "correct": "Whether a machine can exhibit intelligent behavior indistinguishable from a human"
+        },
+        {
+            "question": "Which component is essential for training an AI model?",
+            "options": [
+                "Labeled data",
+                "Web browser",
+                "Server logs",
+                "Data compression"
+                ],
+            "correct": "Labeled data"
+        },
+        {
+            "question": "Which AI concept involves the generation of new data similar to the training data?",
+            "options": [
+                "Reinforcement learning",
+                "Data mining",
+                "Generative modeling",
+                "Data cleaning"
+                ],
+            "correct": "Generative modeling"
+        },
+        {
+            "question": "Which task would most likely use computer vision?",
+            "options": [
+                "Email spam detection",
+                "Product recommendation",
+                "Image recognition",
+                "Speech synthesis"
+                ],
+            "correct": "Image recognition"
+        },
+        {
+            "question": "What is the role of a loss function in training a model?",
+            "options": [
+                "To sort the data",
+                "To measure how well the model predicts",
+                "To visualize the output",
+                "To reduce training time"
+                ],
+            "correct": "To measure how well the model predicts"
+        },
+        {
+            "question": "Which field closely relates to AI and involves making decisions under uncertainty?",
+            "options": [
+                "Cryptography",
+                "Statistics",
+                "Graphic design",
+                "Hardware engineering"
+                ],
+            "correct": "Statistics"
+        },
+        {
+            "question": "Which ethical concern is associated with AI?",
+            "options": [
+                "Slow processing speed",
+                "High memory usage",
+                "Bias in decision making",
+                "Excessive code comments"
+                ],
+            "correct": "Bias in decision making"
+        },
+        {
+            "question": "What is Generative AI primarily used for?",
+            "options": [
+                "Sorting data",
+                "Generating new content like text, images, or music",
+                "Calculating tax returns",
+                "Compressing files"
+                ],
+            "correct": "Generating new content like text, images, or music"
+        }
+    ]
+}
