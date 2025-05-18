@@ -150,31 +150,36 @@ function shuffleArray(arr) {
 
 function saveHighScore(score) {
   const name = document.getElementById("username").value;
-  const scores = JSON.parse(localStorage.getItem("highScores") || "[]");
-  scores.push({ name, score, category: currentCategory });
-  const sorted = scores.sort((a, b) => b.score - a.score).slice(0, 50);
-  localStorage.setItem("highScores", JSON.stringify(sorted));
-  updateLeaderboard();
+  db.collection("scores").add({
+    name,
+    score,
+    category: currentCategory,
+    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+  }).then(() => {
+    updateLeaderboard();
+  }).catch(console.error);
 }
 
 function updateLeaderboard() {
   const filter = document.getElementById("leaderboard-filter").value;
   const list = document.getElementById("leaderboard-list");
-  const scores = JSON.parse(localStorage.getItem("highScores") || "[]");
   list.innerHTML = "";
 
-  scores
-    .filter((entry) => {
-      if (filter === "all") return true;
-      return entry.category === filter;
-    })
-    .forEach(({ name, score, category }) => {
-      const li = document.createElement("li");
-      li.textContent = `${name} - ${score} (${category})`;
-      list.appendChild(li);
-    });
+  db.collection("scores")
+    .orderBy("score", "desc")
+    .limit(50)
+    .get()
+    .then(snapshot => {
+      snapshot.docs
+        .map(doc => doc.data())
+        .filter(entry => filter === "all" || entry.category === filter)
+        .forEach(({ name, score, category }) => {
+          const li = document.createElement("li");
+          li.textContent = `${name} - ${score} (${category})`;
+          list.appendChild(li);
+        });
+    }).catch(console.error);
 }
-
 
 document
   .getElementById("leaderboard-filter")
