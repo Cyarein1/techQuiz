@@ -30,10 +30,10 @@ let score = 0;
 let timer;
 let userAnswers = [];
 let currentCategory = "";
+let latestScoreDocId = null;
 
 document.getElementById("start-form").addEventListener("submit", async (e) => {
   e.preventDefault();
-  const name = document.getElementById("username").value;
   const category = document.getElementById("category").value;
   currentCategory = category;
 
@@ -75,9 +75,7 @@ function loadQuestion() {
   shuffleArray(q.options).forEach((option) => {
     const li = document.createElement("li");
     li.textContent = option;
-    li.addEventListener("click", () => {
-      handleAnswer(option, q);
-    });
+    li.addEventListener("click", () => handleAnswer(option, q));
     list.appendChild(li);
   });
 
@@ -87,8 +85,7 @@ function loadQuestion() {
 
 function handleAnswer(selected, question) {
   clearInterval(timer);
-  const isCorrect = selected === question.correct;
-  if (isCorrect) score++;
+  if (selected === question.correct) score++;
 
   userAnswers.push({
     question: question.question,
@@ -108,51 +105,6 @@ function showResult() {
   const total = questions.length;
   const percent = Math.round((score / total) * 100);
   result.innerHTML = `<h2>Your Score: ${score}/${total} (${percent}%)</h2>`;
-
-  userAnswers.forEach((entry, i) => {
-    const container = document.createElement("div");
-    container.className = "review-question";
-
-    const q = document.createElement("h4");
-    q.textContent = `${i + 1}. ${entry.question}`;
-    container.appendChild(q);
-
-    entry.options.forEach((opt) => {
-      const li = document.createElement("div");
-      li.textContent = opt;
-      li.classList.add("answer-review");
-
-      if (opt === entry.correct) li.classList.add("correct");
-      if (opt === entry.userAnswer && opt !== entry.correct)
-        li.classList.add("wrong");
-
-      container.appendChild(li);
-    });
-
-    const feedback = document.createElement("p");
-    feedback.textContent =
-      entry.userAnswer === entry.correct
-        ? "✅ You answered correctly!"
-        : `❌ You answered "${entry.userAnswer}", but the correct answer was "${entry.correct}".`;
-    container.appendChild(feedback);
-
-    result.appendChild(container);
-  });
-
-  const buttonRow = document.createElement("div");
-  buttonRow.classList.add("button-row");
-
-  const homeBtn = document.createElement("button");
-  homeBtn.textContent = "Go Home";
-  homeBtn.onclick = () => {
-    document.getElementById("result").style.display = "none";
-    document.getElementById("start-form").style.display = "block";
-    document.getElementById("leaderboard").style.display = "block";
-    updateLeaderboard();
-  };
-
-  buttonRow.appendChild(homeBtn);
-  result.appendChild(buttonRow);
 
   result.style.display = "block";
 
@@ -182,18 +134,23 @@ function shuffleArray(arr) {
   return arr.sort(() => Math.random() - 0.5);
 }
 
-function saveHighScore(score) {
+async function saveHighScore(score) {
   const name = document.getElementById("username").value;
   const percent = Math.round((score / questions.length) * 100);
 
-  addDoc(collection(db, "scores"), {
-    name,
-    score: percent,
-    category: currentCategory,
-    timestamp: serverTimestamp(),
-  })
-    .then(() => updateLeaderboard())
-    .catch(console.error);
+  try {
+    const docRef = await addDoc(collection(db, "scores"), {
+      name,
+      score: percent,
+      category: currentCategory,
+      timestamp: serverTimestamp(),
+    });
+
+    latestScoreDocId = docRef.id;
+    updateLeaderboard();
+  } catch (err) {
+    console.error("Failed to save score:", err);
+  }
 }
 
 async function updateLeaderboard() {
@@ -201,19 +158,52 @@ async function updateLeaderboard() {
   const list = document.getElementById("leaderboard-list");
   list.innerHTML = "";
 
-  const q = query(collection(db, "scores"), orderBy("score", "desc"), limit(50));
+  const q = query(collection(db, "scores"), orderBy("score", "desc"));
   const snapshot = await getDocs(q);
-  snapshot.forEach((doc) => {
-    const { name, score, category } = doc.data();
-    if (filter === "all" || category === filter) {
-      const li = document.createElement("li");
-      li.textContent =
-        filter === "all"
-          ? `${name} - ${score}% (${category})`
-          : `${name} - ${score}%`;
-      list.appendChild(li);
-    }
+
+  let items = [];
+  let currentRank = 1;
+  let playerEntry = null;
+
+  snapshot.forEach((docSnap) => {
+    const data = docSnap.data();
+    const include = filter === "all" || data.category === filter;
+    if (!include) return;
+
+    const entry = {
+      id: docSnap.id,
+      name: data.name,
+      score: data.score,
+      category: data.category,
+      rank: currentRank++,
+    };
+
+    if (docSnap.id === latestScoreDocId) playerEntry = entry;
+
+    items.push(entry);
   });
+
+  const top = items.slice(0, 9);
+  const playerRank = playerEntry?.rank || items.length + 1;
+
+  top.forEach(entry => {
+    const li = document.createElement("li");
+    li.innerHTML = `<strong>#${entry.rank}</strong> ${entry.name} - ${entry.score}%`;
+    list.appendChild(li);
+  });
+
+  if (items.length > 9 && playerEntry && playerEntry.rank > 9) {
+    const dots = document.createElement("li");
+    dots.textContent = "...";
+    list.appendChild(dots);
+
+    const li = document.createElement("li");
+    li.innerHTML = `<strong>#${playerEntry.rank}</strong> ${playerEntry.name} - ${playerEntry.score}%`;
+    li.style.backgroundColor = "#e8f0fe";
+    li.style.fontWeight = "bold";
+    li.style.border = "2px solid #4285f4";
+    list.appendChild(li);
+  }
 }
 
 document
