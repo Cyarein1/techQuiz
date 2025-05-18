@@ -142,10 +142,6 @@ function showResult() {
   const buttonRow = document.createElement("div");
   buttonRow.classList.add("button-row");
 
-  const restartBtn = document.createElement("button");
-  restartBtn.textContent = "Retake Quiz";
-  restartBtn.onclick = () => location.reload();
-
   const homeBtn = document.createElement("button");
   homeBtn.textContent = "Go Home";
   homeBtn.onclick = () => {
@@ -155,7 +151,6 @@ function showResult() {
     updateLeaderboard();
   };
 
-  buttonRow.appendChild(restartBtn);
   buttonRow.appendChild(homeBtn);
   result.appendChild(buttonRow);
 
@@ -212,7 +207,10 @@ async function updateLeaderboard() {
     const { name, score, category } = doc.data();
     if (filter === "all" || category === filter) {
       const li = document.createElement("li");
-      li.textContent = `${name} - ${score}% (${category})`;
+      li.textContent =
+        filter === "all"
+          ? `${name} - ${score}% (${category})`
+          : `${name} - ${score}%`;
       list.appendChild(li);
     }
   });
@@ -223,5 +221,3 @@ document
   .addEventListener("change", updateLeaderboard);
 
 updateLeaderboard();
-
-
