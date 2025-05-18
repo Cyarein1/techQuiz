@@ -167,20 +167,4 @@
       margin-bottom: 5px;
       border-bottom: 1px solid #eee;
     }
-
-    #leaderboard-list li strong {
-      margin-right: 8px;
-      color: #1976d2;
-    }
-
-    #leaderboard-list li:last-child {
-      margin-top: 15px;
-    }
-
-
-  
-    .button-row button {
-      flex: 1 1 100%;
-    }
-  }
   
