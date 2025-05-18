@@ -3,6 +3,8 @@ import {
   getFirestore,
   collection,
   addDoc,
+  doc,
+  getDoc,
   getDocs,
   query,
   orderBy,
@@ -37,20 +39,32 @@ document.getElementById("start-form").addEventListener("submit", async (e) => {
   const category = document.getElementById("category").value;
   currentCategory = category;
 
-  const response = await fetch("questions.json");
-  const data = await response.json();
+  try {
+    const docRef = doc(db, "categories", category.toLowerCase());
+    const docSnap = await getDoc(docRef);
 
-  questions = shuffleArray(data[category.toLowerCase()]).slice(0, 10);
-  currentIndex = 0;
-  score = 0;
-  userAnswers = [];
+    if (docSnap.exists()) {
+      const data = docSnap.data();
+      questions = shuffleArray(data.questions).slice(0, 10); // Grab 10 random questions
 
-  document.getElementById("start-form").style.display = "none";
-  document.getElementById("quiz-container").style.display = "block";
-  document.getElementById("leaderboard").style.display = "none";
+      currentIndex = 0;
+      score = 0;
+      userAnswers = [];
 
-  loadQuestion();
+      document.getElementById("start-form").style.display = "none";
+      document.getElementById("quiz-container").style.display = "block";
+      document.getElementById("leaderboard").style.display = "none";
+
+      loadQuestion();
+    } else {
+      alert(`No questions found for category: ${category}`);
+    }
+  } catch (error) {
+    console.error("Error fetching questions:", error);
+    alert("Failed to load questions. Please try again later.");
+  }
 });
+
 
 function loadQuestion() {
   if (currentIndex >= questions.length) return showResult();
