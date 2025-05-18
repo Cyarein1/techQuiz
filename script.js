@@ -9,10 +9,8 @@ import {
   query,
   orderBy,
   serverTimestamp,
-  limit
+  limit,
 } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-firestore.js";
-
-// 🔐 Replace these with your actual Firebase config
 
 const firebaseConfig = {
   apiKey: "AIzaSyDXboWWLo5RNaAMq_aFgU3ihOX5Pj-CmVY",
@@ -45,7 +43,8 @@ document.getElementById("start-form").addEventListener("submit", async (e) => {
 
     if (docSnap.exists()) {
       const data = docSnap.data();
-      questions = shuffleArray(data.questions).slice(0, 10); // Grab 10 random questions
+      const number = data.numberOfQuestions || 10;
+      questions = shuffleArray(data.questions).slice(0, number);
 
       currentIndex = 0;
       score = 0;
@@ -64,7 +63,6 @@ document.getElementById("start-form").addEventListener("submit", async (e) => {
     alert("Failed to load questions. Please try again later.");
   }
 });
-
 
 function loadQuestion() {
   if (currentIndex >= questions.length) return showResult();
@@ -106,7 +104,10 @@ function handleAnswer(selected, question) {
 function showResult() {
   document.getElementById("quiz-container").style.display = "none";
   const result = document.getElementById("result");
-  result.innerHTML = `<h2>Your Score: ${score}</h2>`;
+
+  const total = questions.length;
+  const percent = Math.round((score / total) * 100);
+  result.innerHTML = `<h2>Your Score: ${score}/${total} (${percent}%)</h2>`;
 
   userAnswers.forEach((entry, i) => {
     const container = document.createElement("div");
@@ -188,9 +189,11 @@ function shuffleArray(arr) {
 
 function saveHighScore(score) {
   const name = document.getElementById("username").value;
+  const percent = Math.round((score / questions.length) * 100);
+
   addDoc(collection(db, "scores"), {
     name,
-    score,
+    score: percent,
     category: currentCategory,
     timestamp: serverTimestamp(),
   })
@@ -205,11 +208,11 @@ async function updateLeaderboard() {
 
   const q = query(collection(db, "scores"), orderBy("score", "desc"), limit(50));
   const snapshot = await getDocs(q);
-  snapshot.forEach(doc => {
+  snapshot.forEach((doc) => {
     const { name, score, category } = doc.data();
     if (filter === "all" || category === filter) {
       const li = document.createElement("li");
-      li.textContent = `${name} - ${score} (${category})`;
+      li.textContent = `${name} - ${score}% (${category})`;
       list.appendChild(li);
     }
   });
@@ -220,4 +223,5 @@ document
   .addEventListener("change", updateLeaderboard);
 
 updateLeaderboard();
+
 
